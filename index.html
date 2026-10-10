@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manager Library · Sistema Integral de Gestión Bibliotecaria</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563eb'><path d='M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z'/></svg>">
+</head>
+<body>
+
+  <!-- Encabezado / Barra Superior -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <span class="brand-icon">📚</span>
+        <span class="brand-title">Manager Library</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#caracteristicas">Características</a>
+        <a href="#arquitectura">Arquitectura</a>
+        <a href="#reglas">Reglas de Negocio</a>
+        <a href="#stack">Tecnología</a>
+        <a href="#demo" class="btn-nav">Ver Demo</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="badge">SENA ADSO · Ficha 3413974 · SDD</div>
+        <h1>Gestión moderna y atómica de préstamos de libros</h1>
+        <p>
+          Sistema de alta confiabilidad para bibliotecas pequeñas. Desarrollado con 
+          <strong>Arquitectura Cebolla (Onion)</strong>, <strong>Laravel 10</strong>, 
+          <strong>React 18</strong> y <strong>PostgreSQL 16</strong> bajo metodología guiada por especificación (SDD).
+        </p>
+        <div class="hero-actions">
+          <a href="#caracteristicas" class="btn-primary">Explorar Sistema</a>
+          <a href="#arquitectura" class="btn-secondary">Diseño de Arquitectura</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="mockup-header">
+          <div class="mockup-dots"><span></span><span></span><span></span></div>
+          <div class="mockup-title">Dashboard · Manager Library</div>
+        </div>
+        <div class="mockup-body">
+          <div class="stat-grid">
+            <div class="stat-box">
+              <span class="stat-num">40+</span>
+              <span class="stat-label">Libros en Catálogo</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-num">14 Días</span>
+              <span class="stat-label">Plazo de Préstamo</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-num">0% Multas</span>
+              <span class="stat-label">Enfoque Ágil</span>
+            </div>
+          </div>
+          <div class="loan-preview">
+            <div class="loan-row">
+              <span class="loan-book">Cien años de soledad</span>
+              <span class="status-tag tag-open">Abierto (Open)</span>
+            </div>
+            <div class="loan-row">
+              <span class="loan-book">Clean Code (Robert C. Martin)</span>
+              <span class="status-tag tag-closed">Devuelto</span>
+            </div>
+            <div class="loan-row">
+              <span class="loan-book">Breve historia del tiempo</span>
+              <span class="status-tag tag-overdue">Vencido (+2 días)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Características Principales -->
+  <section id="caracteristicas" class="section">
+    <div class="section-container">
+      <div class="section-title">
+        <h2>Capacidades del Sistema</h2>
+        <p>Diseñado para cumplir con rigor cada uno de los criterios de aceptación y requisitos no funcionales.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📖</div>
+          <h3>Catálogo con 5 Categorías</h3>
+          <p>Clasificación inmutable en Novela, Ciencia, Tecnología, Historia e Infantil. Control estricto de ejemplares totales y disponibles.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Préstamos Atómicos</h3>
+          <p>Registro de 1 a 3 libros por operación con descuento inmediato de stock. Prevención de concurrencia optimista.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>Límites y Control de Vencidos</h3>
+          <p>Máximo 3 libros prestados por socio. Bloqueo automático para solicitar nuevos préstamos si tiene libros vencidos pendientes.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">❄️</div>
+          <h3>Snapshot Congelado (ADR-004)</h3>
+          <p>La línea de préstamo guarda el título, ISBN y categoría en el momento del préstamo para garantizar la verdad histórica en reportes.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Reportes de Alta Precisión</h3>
+          <p>Ranking de libros más prestados por rango de fechas para administradores, sin exponer datos personales ni claves.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🐳</div>
+          <h3>Despliegue Contenerizado</h3>
+          <p>Un solo comando levanta la base de datos PostgreSQL 16 con esquema vacío, la API en Laravel y el portal en React con Nginx.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Arquitectura Cebolla -->
+  <section id="arquitectura" class="section bg-light">
+    <div class="section-container">
+      <div class="section-title">
+        <h2>Arquitectura Cebolla / Hexagonal</h2>
+        <p>Cumplimiento estricto de los artículos I a IV de la Constitución del proyecto.</p>
+      </div>
+
+      <div class="onion-diagram-box">
+        <div class="onion-ring ring-presentation">
+          <span class="ring-title">1. PRESENTATION (Controladores HTTP · Middleware JWT · Contrato /api/v1)</span>
+          <div class="onion-ring ring-application">
+            <span class="ring-title">2. APPLICATION (Casos de Uso · Puertos Inbound/Outbound)</span>
+            <div class="onion-ring ring-domain">
+              <span class="ring-title">3. DOMAIN (Entidades Book, Loan, Member · Value Objects · Reglas Puras)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="onion-notes">
+        <p><strong>Artículo I:</strong> El dominio no depende de ningún framework ni librería de terceros.</p>
+        <p><strong>Artículo III:</strong> Un único punto de composición (<code>PortBindingsServiceProvider</code>).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stack Tecnológico -->
+  <section id="stack" class="section">
+    <div class="section-container">
+      <div class="section-title">
+        <h2>Stack Tecnológico Oficial</h2>
+        <p>Solución traducida desde la especificación abstracta al stack oficial del reto.</p>
+      </div>
+
+      <div class="tech-grid">
+        <div class="tech-badge">
+          <span class="tech-icon">🐘</span>
+          <h4>PHP 8.2 & Laravel 10</h4>
+          <p>Backend API · Onion Architecture</p>
+        </div>
+        <div class="tech-badge">
+          <span class="tech-icon">⚛️</span>
+          <h4>React 18 & TypeScript</h4>
+          <p>Frontend SPA · Vite & CSS Moderno</p>
+        </div>
+        <div class="tech-badge">
+          <span class="tech-icon">🐘</span>
+          <h4>PostgreSQL 16</h4>
+          <p>Esquema <code>library</code> · Invariantes en el Motor</p>
+        </div>
+        <div class="tech-badge">
+          <span class="tech-icon">🐳</span>
+          <h4>Docker Compose</h4>
+          <p>Despliegue Multi-contenedor</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p><strong>Manager Library</strong> · Proyecto Técnico de Evaluación ADSO Ficha 3413974 · SENA</p>
+      <p>Desarrollado por <strong>Paula Claros</strong> bajo metodología Spec-Driven Development (SDD).</p>
+    </div>
+  </footer>
+
+</body>
+</html>
